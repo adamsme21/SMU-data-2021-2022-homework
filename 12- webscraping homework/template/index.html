@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Webscraping Challenge Adams</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/slate/bootstrap.min.css">
+</head>
+
+<body>
+    <div>
+        <div class="list-group">
+            <div class="col-md-12">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Mission to Mars</h5>
+                    </div>
+                    <button type="button" class="btn btn-secondary" href="/scrape">Scrape New Data</button>
+                  </a>>
+            </div>
+        </div>        
+    </div>
+    <div>
+      <div class="col-md-12">
+        <h2>Latest Mars News</h2>
+        <p>{{mars_list.news_title}}</p>
+        <p><small>{{mars_list.news_p}}</small></p>
+      </div>
+    </div>
+    <div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-header">Featured Mars Image</div>
+                    <div style="text-align: center;" class="card-body">
+                    <div class="col-md-12">
+                        <img href="{{mars_list.featured_image_url}}" src="{{mars_list.featured_image_url}}" height="25%" width="25%">
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Mars Facts</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-active" src="{{mars_list.facts}}" href="{{mars_list.facts}}">
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Mars Hemispheres</div>
+              <div class="card-body">
+                <img src="{{mars_list.hemisphere_image_urls}}" href="{{mars_list.hemisphere_image_urls}}">
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
